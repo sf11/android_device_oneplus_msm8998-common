@@ -34,6 +34,12 @@
 /vendor/usr/keylayout/synaptics.kl                              u:object_r:vendor_keylayout_file:s0
 /vendor/usr/keylayout/synaptics_s3320.kl                        u:object_r:vendor_keylayout_file:s0
 
+# Power HAL
+/dev/socket/perfd                                               u:object_r:perfd_socket:s0
+/(vendor|system/vendor)/bin/perfd                               u:object_r:perfd_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.oneplus5    u:object_r:hal_power_default_exec:s0
+/sys/devices/system/cpu(/.*)?                                   u:object_r:sysfs_devices_system_cpu:s0
+
 # Ril
 /data/oemnvitems(/.*)?                                          u:object_r:nv_data_file:s0
 /(vendor|system/vendor)/radio/qcril_database/qcril.db           u:object_r:nv_data_file:s0
@@ -51,6 +57,9 @@
 /sys/devices/virtual/graphics/fb0/srgb                          u:object_r:sysfs_livedisplay:s0
 
 /sys/devices/soc/8c0000.qcom,msm-cam/video4linux/(/.*)?         u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa0000.qcom,jpeg/video4linux/(/.*)?           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa4000.qcom,fd/video4linux/(/.*)?             u:object_r:sysfs_graphics:s0
+/sys/devices/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/(/.*)?     u:object_r:sysfs_graphics:s0
 
 # Power supply
 /sys/devices/soc/.*ssusb/power_supply/usb(/.*)?                 u:object_r:sysfs_usb_supply:s0
